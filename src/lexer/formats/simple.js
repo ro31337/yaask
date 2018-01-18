@@ -9,7 +9,7 @@ class FmtSimple {
 
   tokenize(str) {
     return {
-      title: str.match(this.regex)[1],
+      message: str.match(this.regex)[1],
     };
   }
 }
