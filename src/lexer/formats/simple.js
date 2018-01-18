@@ -1,6 +1,6 @@
 class FmtSimple {
   constructor() {
-    this.regex = /^"(.+)"(\s+)?$/gm;
+    this.regex = /^"(.+)"(\s+)?$/;
   }
 
   test(str) {
@@ -8,7 +8,9 @@ class FmtSimple {
   }
 
   tokenize(str) {
-    console.log(str);
+    return {
+      title: str.match(this.regex)[1],
+    }
   }
 };
 
