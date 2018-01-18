@@ -1,10 +1,12 @@
 const { FmtSimple } = require('./formats/simple');
+const { FmtDefault } = require('./formats/default');
 
 class Lexer {
   constructor() {
     this.cnt = 0;
     this.tokens = [];
     this.formats = [
+      new FmtDefault(),
       new FmtSimple(),
     ];
   }
