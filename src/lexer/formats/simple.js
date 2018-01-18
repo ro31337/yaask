@@ -10,8 +10,8 @@ class FmtSimple {
   tokenize(str) {
     return {
       title: str.match(this.regex)[1],
-    }
+    };
   }
-};
+}
 
 module.exports = { FmtSimple };

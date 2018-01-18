@@ -3,7 +3,7 @@ const { FmtSimple } = require('./formats/simple');
 class Lexer {
   constructor() {
     this.cnt = 0;
-    this.result = [];
+    this.tokens = [];
     this.formats = [
       new FmtSimple(),
     ];
@@ -12,9 +12,12 @@ class Lexer {
   // Process can be optimized if we pre-parse yaml file and feed Lexer with comments only.
   // You'll probably need to feed line number as well.
   tokenize(line) {
-    this.cnt++;
+    this.cnt += 1;
     if (line.includes('@ask')) {
-      this.result.push(this.scan(line));
+      const token = this.scan(line);
+      if (token) {
+        this.tokens.push(token);
+      }
     }
   }
 
@@ -27,12 +30,15 @@ class Lexer {
 
     // Try each format and get the token, otherwise throw error
     const str = line.match(/@ask\s+?(.+)/)[1];
-    for (let format of this.formats) {
+    for (let i = 0; i < this.formats.length; i += 1) {
+      const format = this.formats[i];
       if (format.test(str)) {
         return format.tokenize(str);
       }
     }
+
+    return null;
   }
-};
+}
 
 module.exports = { Lexer };

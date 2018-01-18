@@ -12,6 +12,6 @@ class InFile {
       .createInterface({ input: fs.createReadStream(this.file) })
       .on('line', this.callback);
   }
-};
+}
 
 module.exports = { InFile };

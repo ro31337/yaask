@@ -4,11 +4,17 @@
   "description": "",
   "main": "src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint src",
+    "test": "npm run lint && echo \"Lint OK, but this project has no tests\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "commander": "^2.13.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.15.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0"
   }
 }
