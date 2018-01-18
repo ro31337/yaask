@@ -8,7 +8,7 @@ class InFile {
   }
 
   read() {
-    readline
+    return readline
       .createInterface({ input: fs.createReadStream(this.file) })
       .on('line', this.callback);
   }

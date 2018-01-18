@@ -8,7 +8,11 @@ program
   .option('-d, --drop', 'output file')
   .action((file) => {
     const lexer = new Lexer();
-    const input = new InFile({ file, callback: line => lexer.tokenize(line) });
-    input.read();
+
+    new InFile({ file, callback: line => lexer.tokenize(line) })
+      .read()
+      .on('close', () => {
+        console.log(lexer.tokens);
+      });
   })
   .parse(process.argv);
