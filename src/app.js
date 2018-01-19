@@ -17,12 +17,11 @@ program
         // console.log(require('util').inspect(lexer.tokens, { showHidden: false, depth: null }));
         const parser = new Parser({ tokens: lexer.tokens });
         parser.parse().then((answers) => {
-          console.log(answers);
-
+          // console.log(answers);
           if (program.output) {
             const out = new OutFile({ outFile: program.output, inFile: file, answers });
             out.write().on('close', () => {
-              console.log('Done!');
+              // console.log('Done!');
             });
           }
         });
