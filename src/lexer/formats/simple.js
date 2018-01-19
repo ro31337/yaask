@@ -10,6 +10,7 @@ class FmtSimple {
   tokenize(str) {
     return {
       type: 'input',
+      name: 'value',
       message: str.match(this.regex)[1],
     };
   }

@@ -13,6 +13,7 @@ class FmtDefault {
     const [, message, , value] = str.match(this.regex) || [];
     return {
       type: 'input',
+      name: 'value',
       message,
       default: value,
     };
