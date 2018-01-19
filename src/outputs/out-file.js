@@ -29,7 +29,7 @@ class OutFile {
         }
       }
     }
-    console.log(result);
+    fs.appendFileSync(this.outFile, `${result}\n`, 'utf8');
   }
 }
 
