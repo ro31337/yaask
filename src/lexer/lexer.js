@@ -4,7 +4,7 @@ const { FmtList } = require('./formats/list');
 
 class Lexer {
   constructor() {
-    this.cnt = 0;
+    this.line = 0;
     this.tokens = [];
     this.formats = [
       new FmtList(),
@@ -16,20 +16,21 @@ class Lexer {
   // Process can be optimized if we pre-parse yaml file and feed Lexer with comments only.
   // You'll probably need to feed line number as well.
   tokenize(line) {
-    this.cnt += 1;
+    this.line += 1;
     if (line.includes('@ask')) {
-      const token = this.scan(line);
-      if (token) {
-        this.tokens.push(token);
+      const q = this.scan(line);
+      if (q) {
+        this.tokens.push({ line: this.line, q });
       }
     }
   }
 
+  // @private
   scan(line) {
     // Every line should have the minimum format of:
     // @ask "Lorem ipsum"
     if (!line.match(/@ask\s+?".+?"/g)) {
-      throw new Error(`Unexpected format on line ${this.cnt}`);
+      throw new Error(`Unexpected format on line ${this.line}`);
     }
 
     // Try each format and get the token, otherwise throw error

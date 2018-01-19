@@ -10,8 +10,8 @@ class Parser {
     for (let i = 0; i < this.tokens.length; i += 1) {
       const token = this.tokens[i];
       // We need to disable the warning, otherwise all questions will be displayed at the same time
-      const answers = await inquirer.prompt(token); // eslint-disable-line no-await-in-loop
-      result.push(answers);
+      const answers = await inquirer.prompt(token.q); // eslint-disable-line no-await-in-loop
+      result.push(Object.assign(answers, { line: token.line }));
     }
     return result;
   }
