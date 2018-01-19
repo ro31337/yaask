@@ -12,6 +12,7 @@ class FmtDefault {
   tokenize(str) {
     const [, message, , value] = str.match(this.regex) || [];
     return {
+      type: 'input',
       message,
       default: value,
     };

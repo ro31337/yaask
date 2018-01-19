@@ -9,6 +9,7 @@ class FmtSimple {
 
   tokenize(str) {
     return {
+      type: 'input',
       message: str.match(this.regex)[1],
     };
   }

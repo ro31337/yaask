@@ -1,3 +1,6 @@
+# settings file, in case somebody runs "yaask settings-sample.yml -o settings.yml" command from readme
+settings.yml
+
 # nyc test coverage
 .nyc_output
 
