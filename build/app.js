@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 var program = require('commander');
 
 var _require = require('./inputs/in-file'),

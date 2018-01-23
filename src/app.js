@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const program = require('commander');
 const { InFile } = require('./inputs/in-file');
 const { OutFile } = require('./outputs/out-file');

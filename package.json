@@ -1,8 +1,11 @@
 {
   "name": "yaask",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "main": "build/app.js",
+  "bin": {
+    "yaask": "./build/app.js"
+  },
   "scripts": {
     "clean": "rm -rf ./build && mkdir ./build",
     "build": "npm run clean && babel -d ./build ./src -s false",
