@@ -1,7 +1,7 @@
 {
   "name": "yaask",
-  "version": "0.1.1",
-  "description": "",
+  "version": "0.1.2",
+  "description": "Make your yaml configurable with interactive configurations!",
   "main": "build/app.js",
   "bin": {
     "yaask": "./build/app.js"
@@ -12,8 +12,8 @@
     "lint": "eslint src",
     "test": "npm run lint && echo \"Lint OK, but this project has no tests\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Roman Pushkin <roman.pushkin@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.38",
     "commander": "^2.13.0",
