@@ -2,18 +2,25 @@
   "name": "yaask",
   "version": "0.1.0",
   "description": "",
-  "main": "src/app.js",
+  "main": "build/app.js",
   "scripts": {
+    "clean": "rm -rf ./build && mkdir ./build",
+    "build": "npm run clean && babel -d ./build ./src -s false",
     "lint": "eslint src",
     "test": "npm run lint && echo \"Lint OK, but this project has no tests\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/runtime": "^7.0.0-beta.38",
     "commander": "^2.13.0",
     "inquirer": "^5.0.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.38",
+    "@babel/core": "^7.0.0-beta.38",
+    "@babel/plugin-transform-runtime": "^7.0.0-beta.38",
+    "@babel/preset-env": "^7.0.0-beta.38",
     "eslint": "^4.15.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.8.0"

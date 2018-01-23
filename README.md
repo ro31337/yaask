@@ -1,4 +1,6 @@
-Uses [Inquirer.js](https://github.com/SBoudrias/Inquirer.js/) under the hood.
+Requirements:
+
+* Node 4.2+
 
 Install:
 
