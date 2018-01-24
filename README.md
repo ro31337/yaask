@@ -75,6 +75,10 @@ cloud_provider: azure # @ask "Your cloud provider?" aws (Amazon AWS) | azure (Mi
 log_type: none # @ask "Select log type" error | warn | info | verbose | none (I don't need any logging)
 ```
 
+## Why?
+
+I use it to make my Docker containers configurable.
+
 ## License
 
 MIT
