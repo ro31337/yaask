@@ -16,6 +16,11 @@ program
       process.exit(1);
     }
 
+    if (!fs.existsSync(file)) {
+      console.log(`Error: file ${file} does not exist.`);
+      process.exit(1);
+    }
+
     if (fs.existsSync(program.output)) {
       console.log(`Error: file ${program.output} already exists.`);
       process.exit(1);
