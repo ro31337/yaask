@@ -1,11 +1,16 @@
 {
   "name": "yaask",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Make your yaml configurable with interactive configurations!",
+  "url": "https://github.com/ro31337/yaask",
   "main": "build/app.js",
   "bin": {
-    "yaask": "./build/app.js"
+    "yaask": "build/app.js"
   },
+  "files": [
+    "build/",
+    "LICENSE"
+  ],
   "scripts": {
     "clean": "rm -rf ./build && mkdir ./build",
     "build": "npm run clean && babel -d ./build ./src -s false",
