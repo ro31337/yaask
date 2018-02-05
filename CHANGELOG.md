@@ -1,3 +1,9 @@
+## Yaask 0.1.3
+
+*   Check if input file exists
+
+    *Andrew Ray*
+
 ## Yaask 0.1.2
 
 *   Update license
