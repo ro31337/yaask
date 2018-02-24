@@ -25,8 +25,8 @@
 */
 class FmtList {
   constructor() {
-    // https://regex101.com/r/AjkHUq/1
-    this.regex1 = /^"(.+)"(\s+)?(.+?\|.+?)(\s+)?$/; // regex to extract message and options
+    // https://regex101.com/r/AjkHUq/4
+    this.regex1 = /^"?(.+)("|:|\?)(\s+)?(.+?\|.+?)(\s+)?$/; // regex to extract message and options
     // https://regex101.com/r/X2Z9xO/1
     this.regex2 = /^(\s+)?(.+?)(\s+)?\((\s+)?(.+?)(\s+)?\)/; // regex to extract each option
   }
@@ -37,7 +37,7 @@ class FmtList {
   }
 
   tokenize(str) {
-    const [, message, , options] = str.match(this.regex1) || [];
+    let [, message, separator, , options] = str.match(this.regex1) || [];
     const choices = [];
     const oo = options.split(/\|/g) || [];
     for (let i = 0; i < oo.length; i += 1) {
@@ -48,6 +48,11 @@ class FmtList {
       } else {
         choices.push({ name: raw });
       }
+    }
+    // See url for regex1 to understand why we add '?' to message if separator equals '?'.
+    // This probably can be improved with better regex, but I don't know how.
+    if (separator === '?') {
+      message += '?';
     }
     return {
       type: 'list',

@@ -29,7 +29,8 @@ class Lexer {
   scan(line) {
     // Every line should have the minimum format of:
     // @ask "Lorem ipsum"
-    if (!line.match(/@ask\s+?".+?"/g)) {
+    // https://regex101.com/r/BALoEo/1
+    if (!line.match(/@ask\s.+/g)) {
       throw new Error(`Unexpected format on line ${this.line}`);
     }
 

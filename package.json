@@ -1,6 +1,6 @@
 {
   "name": "yaask",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Make your yaml configurable with interactive configurations!",
   "url": "https://github.com/ro31337/yaask",
   "main": "build/app.js",

@@ -1,3 +1,12 @@
+## Yaask 0.1.4
+
+*   More flexible syntax for simple format
+*   More flexible syntax for default format
+*   More flexible syntax for list format
+*   Documentation updates
+
+    *Roman Pushkin*
+
 ## Yaask 0.1.3
 
 *   Check if input file exists

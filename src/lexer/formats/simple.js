@@ -1,6 +1,7 @@
 class FmtSimple {
   constructor() {
-    this.regex = /^"(.+)"(\s+)?$/;
+    // https://regex101.com/r/7hjXbd/1
+    this.regex = /^"?(.+?\??)"?(\s+)?$/;
   }
 
   test(str) {
