@@ -2,8 +2,6 @@
 
 Make your yaml configurable with interactive configurations!
 
-[![asciicast](https://asciinema.org/a/jbcOHi5hLfHHhYK1wR8wBleSN.png)](https://asciinema.org/a/jbcOHi5hLfHHhYK1wR8wBleSN)
-
 # Requirements
 
 * Node.js 4.2+
